@@ -1,6 +1,7 @@
 import os
 from flask import Flask, request
 from twilio.util import TwilioCapability
+from twilio.rest import TwilioRestClient
 import twilio.twiml
 
 # Account Sid and Auth Token can be found in your account dashboard
@@ -66,7 +67,19 @@ def call():
 def welcome():
   resp = twilio.twiml.Response()
   resp.say("Welcome to Culture Alley Hello English")
-  return str(resp)
+    
+    return str(resp)
+
+
+if __name__ == "__main__":
+  port = int(os.environ.get("PORT", 5000))
+  app.run(host='0.0.0.0', port=port, debug=True)
+
+@app.route('/conf', methods=['GET', 'POST'])
+def conf():
+  client_t = TwilioRestClient(ACCOUNT_SID, AUTH_TOKEN)
+  conference = client_t.conferences.get("ABC123")
+  print(conference.status)
 
 if __name__ == "__main__":
   port = int(os.environ.get("PORT", 5000))
