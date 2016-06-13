@@ -1,7 +1,6 @@
 import os
 from flask import Flask, request
 from twilio.util import TwilioCapability
-from twilio.rest import TwilioRestClient
 import twilio.twiml
 
 # Account Sid and Auth Token can be found in your account dashboard
@@ -67,8 +66,7 @@ def call():
 def welcome():
   resp = twilio.twiml.Response()
   resp.say("Welcome to Culture Alley Hello English")
-    
-    return str(resp)
+  return str(resp)
 
 
 if __name__ == "__main__":
