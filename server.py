@@ -58,7 +58,7 @@ def call():
     resp.dial(callerId=from_value).client(to[7:])
   else:
     # client -> PSTN
-    resp.dial(to, callerId=caller_id).conference('MyConference')
+    resp.dial(callerId=from_value).conference('MyConference')
     # resp.dial(to, callerId=caller_id)
     
   return str(resp)
