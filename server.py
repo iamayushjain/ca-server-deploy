@@ -60,7 +60,7 @@ def call():
     resp.dial(callerId=from_value).client(to[7:])
   elif to.startswith("conference:"):
     resp.dial(callerId=from_value).conference('MyConference')
-    participants = client_rest.participants('CFbbe46ff1274e283f7e3ac1df0072ab39').list()
+    #participants = client_rest.participants('CFbbe46ff1274e283f7e3ac1df0072ab39').list()
  else:
     # client -> PSTN
      resp.dial(to, callerId=caller_id)
