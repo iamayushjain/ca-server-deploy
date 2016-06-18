@@ -14,6 +14,7 @@ APP_SID = 'AP89a16704d7600569f8aca23517f03d33'
 
 CALLER_ID = '+9199308 42095'
 CLIENT = 'jenny'
+client_rest = TwilioRestClient(ACCOUNT_SID, AUTH_TOKEN)
 
 app = Flask(__name__)
 
@@ -60,6 +61,7 @@ def call():
     resp.dial(callerId=from_value).client(to[7:])
   elif to.startswith("conference:"):
     resp.dial(callerId=from_value).conference('MyConference')
+    participants = client.participants('MyConference').list()
   else:
     # client -> PSTN
      resp.dial(to, callerId=caller_id)
