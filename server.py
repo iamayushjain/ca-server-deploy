@@ -16,7 +16,6 @@ CLIENT = 'jenny'
 client_rest = TwilioRestClient(ACCOUNT_SID, AUTH_TOKEN)
 
 app = Flask(__name__)
-
 @app.route('/token')
 def token():
   account_sid = os.environ.get("ACCOUNT_SID", ACCOUNT_SID)
@@ -77,6 +76,20 @@ def welcome():
   resp = twilio.twiml.Response()
   resp.say("Welcome to Culture Alley Hello English")
   return str(resp)
+
+@app.route('/caller', methods=['GET','POST']) #'GET'
+def caller():
+    response = twiml.Response()
+    response.say("Welcome to the conference call.")
+    response.pause(length = "1")
+    response.say ("Please hold.")
+    conference()
+    return str(response)
+
+def conference():
+    conference = client_rest.conferences.get(ConferenceSid)
+    return str(conference)
+    #print /2010-04-01/Accounts/settings.api_key/Conferences/{ConferenceSid}
 
 if __name__ == "__main__":
   port = int(os.environ.get("PORT", 5000))
