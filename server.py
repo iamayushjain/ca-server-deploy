@@ -79,14 +79,15 @@ def welcome():
 
 @app.route('/caller', methods=['GET','POST']) #'GET'
 def caller():
-    response = twilio.twiml.Response()
-    response.say("Welcome to the conference call.")
-    response.pause(length = "1")
-    response.say ("Please hold.")
-    conference()
-    return str(response)
+#     response = twilio.twiml.Response()
+#     response.say("Welcome to the conference call.")
+#     response.pause(length = "1")
+#     response.say ("Please hold.")
+#     conference()
+#     return str(response)
 
-def conference():
+# def conference():
+    
     conferences = client_rest.conferences.list()
     # conference = client_rest.conferences.get(ConferenceSid)
     # return str(conference)
