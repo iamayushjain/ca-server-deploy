@@ -90,7 +90,7 @@ def caller():
     
     conferences = client_rest.conferences.list()
     # conference = client_rest.conferences.get(ConferenceSid)
-    # return str(conference)
+    return str(conferences)
     # #print /2010-04-01/Accounts/settings.api_key/Conferences/{ConferenceSid}
 
 if __name__ == "__main__":
