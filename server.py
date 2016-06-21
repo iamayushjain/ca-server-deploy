@@ -79,13 +79,14 @@ def welcome():
 
 @app.route('/confercall', methods=['GET', 'POST'])
 def confercall():
-    partiid = '&'
+    partiid = '~'
     conferences = client_rest.conferences.list()
     for conference in conferences:
       participants = client_rest.participants(conference.sid).list()
       len(participants)
       for participant in participants :
            partiid+=(participant.call_sid)
+           partiid+='~'
       return partiid
         # return participant.sid
     resp = twilio.twiml.Response()
