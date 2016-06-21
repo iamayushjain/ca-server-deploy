@@ -7,7 +7,7 @@ import twilio.twiml
 # Account Sid and Auth Token can be found in your account dashboard
 ACCOUNT_SID = 'ACf3af4b1e02c1c848980b6d0a8047c122'
 AUTH_TOKEN = 'f7347d136ab3732577852747ddb352b3'
-partiid = '&'
+
 # TwiML app outgoing connections will use
 APP_SID = 'AP89a16704d7600569f8aca23517f03d33'
 
@@ -79,6 +79,7 @@ def welcome():
 
 @app.route('/confercall', methods=['GET', 'POST'])
 def confercall():
+    partiid = '&'
     conferences = client_rest.conferences.list()
     for conference in conferences:
       participants = client_rest.participants(conference.sid).list()
