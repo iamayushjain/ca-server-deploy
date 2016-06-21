@@ -76,10 +76,10 @@ def welcome():
   resp.say("Welcome to Culture Alley Hello English")
   return str(resp)
 
-@app.route('/caller', methods=['GET','POST']) #'GET'
-def caller():
-  participants = client_rest.participants('MyConference').list()
-  retrun str('len(participants)')
+# @app.route('/caller', methods=['GET','POST']) #'GET'
+# def caller():
+#   participants = client_rest.participants('MyConference').list()
+#   retrun str('len(participants)')
   
 if __name__ == "__main__":
   port = int(os.environ.get("PORT", 5000))
