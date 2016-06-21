@@ -84,7 +84,7 @@ def confercall():
       participants = client_rest.participants(conference.sid).list()
       len(participants)
       for participant in participants :
-           return (participant.sid)
+           return (participant.callsid)
         # return participant.sid
     resp = twilio.twiml.Response()
     resp.say("NO of conference")
