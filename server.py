@@ -87,11 +87,12 @@ def caller():
 #     return str(response)
 
 # def conference():
-    
-    conferences = client_rest.conferences.list()
-    # conference = client_rest.conferences.get(ConferenceSid)
-    return str(conferences)
-    # #print /2010-04-01/Accounts/settings.api_key/Conferences/{ConferenceSid}
+   participants = client.participants('MyConference').list()
+   retrun str(len(participants))
+    # conferences = client_rest.conferences.list()
+    # # conference = client_rest.conferences.get(ConferenceSid)
+    # return str(conferences)
+    # # #print /2010-04-01/Accounts/settings.api_key/Conferences/{ConferenceSid}
 
 if __name__ == "__main__":
   port = int(os.environ.get("PORT", 5000))
