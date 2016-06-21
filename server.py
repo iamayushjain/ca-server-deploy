@@ -77,15 +77,15 @@ def welcome():
   resp.say("Welcome to Culture Alley Hello English")
   return str(resp)
 
-# @app.route('/confercall', methods=['GET', 'POST'])
-# def confercall():
-#     conferences = client_rest.conferences.list()
-#     for conference in conferences:
-#       participants = client_rest.participants(conference.sid).list()
-#       len(participants)
-#     resp = twilio.twiml.Response()
-#     resp.say("Welcome to Culture Alley Hello English"+)
-#     return str(resp)
+@app.route('/confercall', methods=['GET', 'POST'])
+def confercall():
+    conferences = client_rest.conferences.list()
+    for conference in conferences:
+      participants = client_rest.participants(conference.sid).list()
+      len(participants)
+    resp = twilio.twiml.Response()
+    resp.say("Welcome to Culture Alley Hello English"+)
+    return str(resp)
 
 # @app.route('/caller', methods=['GET','POST']) #'GET'
 # def caller():
