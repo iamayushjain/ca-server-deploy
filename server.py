@@ -79,7 +79,7 @@ def welcome():
 @app.route('/caller', methods=['GET','POST']) #'GET'
 def caller():
   participants = client_rest.participants('MyConference').list()
-  retrun len(participants)
+  retrun str('len(participants)')
   
 if __name__ == "__main__":
   port = int(os.environ.get("PORT", 5000))
