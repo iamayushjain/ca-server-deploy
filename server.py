@@ -88,7 +88,7 @@ def caller():
 
 # def conference():
    participants = client.participants('MyConference').list()
-   retrun str(len(participants))
+   retrun len(participants)
     # conferences = client_rest.conferences.list()
     # # conference = client_rest.conferences.get(ConferenceSid)
     # return str(conferences)
