@@ -54,8 +54,6 @@ def call():
   if not from_client:
     # PSTN -> client
     resp.dial(callerId=from_value).client(CLIENT)
-    resp = twilio.twiml.Response()
-    resp.say("Welcome to PSTN")
   elif to.startswith("client:"):
     # client -> client
     resp.dial(callerId=from_value).client(to[7:])
@@ -63,12 +61,12 @@ def call():
     resp.dial(callerId=from_value).conference('MyConference')
     #participants = client_rest.participants('CFbbe46ff1274e283f7e3ac1df0072ab39').list()
     resp = twilio.twiml.Response()
-    resp.say("Welcome to Culture Alley Hello English")
+    resp.say("Welcome to Cuh")
        
     conferences = client_rest.conferences.list()
     for conference in conferences:
         resp = twilio.twiml.Response()
-        resp.say("Welcome to Culture Alley Hello English")
+        resp.say("Welcome to ")
         #print conference.sid
         # welcome()
   else:
