@@ -84,7 +84,7 @@ def confercall():
       participants = client_rest.participants(conference.sid).list()
       len(participants)
     resp = twilio.twiml.Response()
-    resp.say("Welcome to Culture Alley Hello English"+)
+    resp.say("NO of conference")
     return str(resp)
 
 # @app.route('/caller', methods=['GET','POST']) #'GET'
