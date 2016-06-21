@@ -62,8 +62,10 @@ def call():
     #participants = client_rest.participants('CFbbe46ff1274e283f7e3ac1df0072ab39').list()
     conferences = client_rest.conferences.list()
     for conference in conferences:
+        resp = twilio.twiml.Response()
+        resp.say("Welcome to Culture Alley Hello English")
         #print conference.sid
-        welcome()
+        # welcome()
   else:
     # client -> PSTN
      resp.dial(to, callerId=caller_id)
