@@ -54,6 +54,8 @@ def call():
   if not from_client:
     # PSTN -> client
     resp.dial(callerId=from_value).client(CLIENT)
+    resp = twilio.twiml.Response()
+    resp.say("Welcome to PSTN")
   elif to.startswith("client:"):
     # client -> client
     resp.dial(callerId=from_value).client(to[7:])
