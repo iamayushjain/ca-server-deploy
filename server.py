@@ -80,7 +80,6 @@ def welcome():
 @app.route('/confercall', methods=['GET', 'POST'])
 def confercall():
     conferences = client_rest.conferences.list()
-    
     for conference in conferences:
        participants = client_rest.participants(conference.sid).list()
        len(participants)
