@@ -60,14 +60,9 @@ def call():
   elif to.startswith("conference:"):
     resp.dial(callerId=from_value).conference('MyConference')
     #participants = client_rest.participants('CFbbe46ff1274e283f7e3ac1df0072ab39').list()
-    resp = twilio.twiml.Response()
-    resp.say("Welcome to Cuh")
-       
     conferences = client_rest.conferences.list()
     for conference in conferences:
-        resp = twilio.twiml.Response()
-        resp.say("Welcome to ")
-        #print conference.sid
+      print conference.sid
         # welcome()
   else:
     # client -> PSTN
