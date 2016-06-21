@@ -79,21 +79,9 @@ def welcome():
 
 @app.route('/caller', methods=['GET','POST']) #'GET'
 def caller():
-#     response = twilio.twiml.Response()
-#     response.say("Welcome to the conference call.")
-#     response.pause(length = "1")
-#     response.say ("Please hold.")
-#     conference()
-#     return str(response)
-
-# def conference():
-   participants = client.participants('MyConference').list()
-   retrun len(participants)
-    # conferences = client_rest.conferences.list()
-    # # conference = client_rest.conferences.get(ConferenceSid)
-    # return str(conferences)
-    # # #print /2010-04-01/Accounts/settings.api_key/Conferences/{ConferenceSid}
-
+  participants = client_rest.participants('MyConference').list()
+  retrun len(participants)
+  
 if __name__ == "__main__":
   port = int(os.environ.get("PORT", 5000))
   app.run(host='0.0.0.0', port=port, debug=True)
