@@ -119,7 +119,7 @@ def operation():
     
   if mutech:
     #task for mute person
-    participant = client.participants(confersid).update(partid, muted="True")
+    participant = client_rest.participants(confersid).update(partid, muted="True")
     resp.say("Invalid request")
     return str(resp)
   elif task.startswith('delete'):
@@ -128,7 +128,7 @@ def operation():
     return str(resp)
   else:
     #task for unmute person
-    participant = client.participants(confersid).update(partid, muted="False")
+    participant = client_rest.participants(confersid).update(partid, muted="False")
     resp.say("Invalid request")
     return str(resp)
     
