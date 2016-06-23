@@ -112,10 +112,9 @@ def operation():
     return str(resp)
   mutech = task.startswith('mute')
   confersid = "CF123"
-  # #caller_id = os.environ.get("CALLER_ID", CALLER_ID)
-  # conferences = client_rest.conferences.list()
-  #   for conference in conferences:
-  #     confersid = conference.sid
+  conferences = client_rest.conferences.list()
+  for conference in conferences:
+    confersid = conference.sid
     
   if mutech:
     #task for mute person
