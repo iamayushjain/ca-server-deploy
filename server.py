@@ -61,7 +61,7 @@ def call():
     if from_value.startswith("client:teacher"):
       resp.dial(callerId=from_value).conference('MyConference',startConferenceOnEnter="true")
     else:
-      resp.dial(callerId=from_value).conference('MyConference',startConferenceOnEnter="false")
+      resp.dial(callerId=from_value).conference('MyConference',startConferenceOnEnter="true")
     #resp.dial(callerId=from_value).conference('MyConference').
     #participants = client_rest.participants('CFbbe46ff1274e283f7e3ac1df0072ab39').list()
     # conferences = client_rest.conferences.list()
