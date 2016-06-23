@@ -111,10 +111,16 @@ def call():
   #caller_id = os.environ.get("CALLER_ID", CALLER_ID)
   if mutech:
     #task for mute person
+    resp.say("Invalid request")
+    return str(resp)
   elif task.startswith('delete'):
     #task for delete person
+    resp.say("Invalid request")
+    return str(resp)
   else:
     #task for unmute person
+    resp.say("Invalid request")
+    return str(resp)
     
   return str(resp)
 # @app.route('/caller', methods=['GET','POST']) #'GET'
