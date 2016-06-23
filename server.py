@@ -95,7 +95,7 @@ def confercall():
     return str(resp)
 
 @app.route('/operation', methods=['GET', 'POST'])
-def call():
+def operation():
   """ This method routes calls from/to client                  """
   """ Rules: 1. From can be either client:name or PSTN number  """
   """        2. To value specifies target. When call is coming """
