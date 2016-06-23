@@ -59,6 +59,7 @@ def call():
     resp.dial(callerId=from_value).client(to[7:])
   elif to.startswith("conference:"):
     resp.dial(callerId=from_value).conference('MyConference')
+    resp.dial(callerId=from_value).conference('MyConference').
     #participants = client_rest.participants('CFbbe46ff1274e283f7e3ac1df0072ab39').list()
     # conferences = client_rest.conferences.list()
     # for conference in conferences:
@@ -93,6 +94,29 @@ def confercall():
     resp.say("NO of conference")
     return str(resp)
 
+@app.route('/operation', methods=['GET', 'POST'])
+def call():
+  """ This method routes calls from/to client                  """
+  """ Rules: 1. From can be either client:name or PSTN number  """
+  """        2. To value specifies target. When call is coming """
+  """           from PSTN, To value is ignored and call is     """
+  """           routed to client named CLIENT                  """
+  resp = twilio.twiml.Response()
+  partid = request.values.get('partid')
+  task = request.values.get('task')
+  if not (partid and task):
+    resp.say("Invalid request")
+    return str(resp)
+  mutech = task.startswith('mute')
+  #caller_id = os.environ.get("CALLER_ID", CALLER_ID)
+  if mutech:
+    #task for mute person
+  elif task.startswith('delete'):
+    #task for delete person
+  else:
+    #task for unmute person
+    
+  return str(resp)
 # @app.route('/caller', methods=['GET','POST']) #'GET'
 # def caller():
 #   participants = client_rest.participants('MyConference').list()
