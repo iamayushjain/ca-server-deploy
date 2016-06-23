@@ -112,24 +112,24 @@ def operation():
     return str(resp)
   mutech = task.startswith('mute')
   confersid = "CF123"
-  #caller_id = os.environ.get("CALLER_ID", CALLER_ID)
-  conferences = client_rest.conferences.list()
-    for conference in conferences:
-      confersid = conference.sid
+  # #caller_id = os.environ.get("CALLER_ID", CALLER_ID)
+  # conferences = client_rest.conferences.list()
+  #   for conference in conferences:
+  #     confersid = conference.sid
     
   if mutech:
     #task for mute person
     participant = client_rest.participants(confersid).update(partid, muted="True")
-    resp.say("Invalid request")
+    resp.say("Mute")
     return str(resp)
   elif task.startswith('delete'):
     #task for delete person
-    resp.say("Invalid request")
+    resp.say("Delete")
     return str(resp)
   else:
     #task for unmute person
     participant = client_rest.participants(confersid).update(partid, muted="False")
-    resp.say("Invalid request")
+    resp.say("unmute")
     return str(resp)
     
   return str(resp)
