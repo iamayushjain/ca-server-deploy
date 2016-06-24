@@ -123,6 +123,7 @@ def operation():
     return str(resp)
   elif task.startswith('delete'):
     #task for delete person
+    participant = client_rest.participants(confersid).delete(partid)
     resp.say("Delete")
     return str(resp)
   else:
